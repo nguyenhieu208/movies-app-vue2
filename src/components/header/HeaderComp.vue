@@ -78,7 +78,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/utils/mixins/responsive';
+@import '../../assets/styles/utils/mixins/responsive';
+
   .header {
     background: #0b0f16; 
     @include responsive(LG) {

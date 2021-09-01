@@ -22,7 +22,7 @@ export default {
 
   &__img {
     width: 88px;
-    height: 26px;
+    height: 30px;
   }
 }
 </style>
