@@ -1,0 +1,297 @@
+:root {
+  --font-body-size-1: 2.1rem;
+  --font-body-size-2: 1.9rem;
+  --font-body-size-3: 1.7rem;
+  --font-description-size: 1.5rem;
+  --font-large-button-size: 1.5rem;
+  --font-subheading-size: 1.3rem;
+  --font-button-size: 1.3rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-size: 1.7rem;
+  letter-spacing: 0.06rem;
+  line-height: 1.5em;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  color: var(--color-base-primary-accent-2);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-base-background);
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.9rem;
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  color: var(--color-base-primary-accent-1);
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  font-style: var(--font-heading-style);
+  letter-spacing: 0.06rem;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+  line-height: 116%;
+
+  @include responsive(MD) {
+    font-size: 5.8rem;
+  }
+}
+h2, .h2 {
+  font-size: 2.6rem;
+  line-height: 120%;
+
+  @include responsive(MD) {
+    font-size: 4.4rem;
+    line-height: 124%;
+  }
+}
+h3, .h3 {
+  font-size: 2.2rem;
+  line-height: 126%;
+  @include responsive(MD) {
+    font-size: 3rem;
+    line-height: 136%;
+  }
+}
+h4, .h4 {
+  font-size: 1.9rem;
+  line-height: 140%;
+
+  @include responsive(MD) {
+    font-size: 2.2rem;
+    line-height: 128%;
+  }
+}
+
+.body-30 {
+  font-size: 1.7rem;
+  line-height: 144%;
+
+  @include responsive(MD) {
+    font-size: 2.1rem;
+    line-height: 146%;
+  }
+}
+
+.body-20 {
+  font-size: 1.7rem;
+  line-height: 144%;
+
+  @include responsive(MD) {
+    font-size: 1.9rem;
+    line-height: 146%;
+  }
+}
+
+.body-10 {
+  font-size: 1.6rem;
+  line-height: 144%;
+
+  @include responsive(MD) {
+    font-size: 1.7rem;
+    line-height: 144%;
+  }
+}
+
+.caption-30 {
+  font-size: 1.5rem;
+  line-height: 140%;
+  text-transform: uppercase;
+
+  @include responsive(MD) {
+    font-size: 1.5rem;
+    line-height: 132%;
+  }
+}
+
+.caption-20 {
+  font-size: 1.5rem;
+  line-height: 140%;
+  text-transform: uppercase;
+
+  @include responsive(MD) {
+    font-size: 1.5rem;
+    line-height: 132%;
+  }
+}
+.caption-10 {
+  font-size: 1.2rem;
+  line-height: 146%;
+  text-transform: uppercase;
+
+  @include responsive(MD) {
+    font-size: 1.3rem;
+    line-height: 146%;
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.subheading {
+  font-size: var(--font-subheading-size);
+}
+
+// #MainContent .shopify-section {
+//   padding-top: 100px;
+//   padding-bottom: 100px;
+// }
+
+.text--link {
+  position: relative;
+
+  display: inline-block;
+
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 146%;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: color(base-primary-accent-1);
+
+  cursor: pointer;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: -10px;
+    left: -4px;
+
+    height: 0.7rem;
+    width: 0;
+
+    opacity: 0;
+
+    border: solid 2px var(--color-base-primary-accent-1);
+    border-color: var(--color-base-primary-accent-1) transparent transparent transparent;
+    border-radius: 50%;
+
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: calc(100% + 8px);
+    opacity: 1;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    bottom: -10px;
+    right: -4px;
+
+    height: 0.7rem;
+    width: calc(100% + 8px);
+
+    opacity: 1;
+
+    border: solid 2px var(--color-base-primary-accent-1);
+    border-color: var(--color-base-primary-accent-1) transparent transparent transparent;
+    border-radius: 50%;
+
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+// .shopify-section {
+//   padding-top: 3rem;
+//   padding-bottom: 3rem;
+
+//   @include responsive(MD) {
+//     padding-top: 7rem;
+//     padding-bottom: 7rem;
+//   }
+// }
+
+.remove-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.remove-scroll {
+  height: 100%;
+  overflow: hidden;
+
+  @include responsive(MD) {
+    height: unset;
+    overflow: unset;
+  }
+}
+
+.no-js:not(html) {
+  display: none;
+}
+
+.no-js .js {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+}

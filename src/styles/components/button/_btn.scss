@@ -1,0 +1,203 @@
+.btn {
+  font-size: 1.3rem;
+  line-height: 146%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  font-weight: 800;
+
+  background: color(base-primary-accent-1);
+  color: color(base-secondary-accent-3);
+  text-align: center;
+
+  padding: 1.6rem 6rem;
+
+  border: 0.1rem solid color(base-primary-accent-1);
+  border-radius: 3rem;
+
+  cursor: pointer;
+  outline: 0;
+  user-select: none;
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  display: inline-block;
+
+  transition: all linear 0.15s;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.btn--is-hover-shadow {
+  &:hover {
+    box-shadow: 0px 10px 50px 0px rgba(220, 46, 0, 0.4);
+  }
+}
+
+.btn--is-slide {
+  position: relative;
+
+  background: color(base-secondary-accent-3);
+
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background: var(--color-base-primary-accent-1);
+
+    border-radius: 3rem;
+
+    border-radius: 3rem;
+
+    transform: scale(1, 1);
+    transform-origin: left center;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    z-index: -1;
+  }
+
+  &:hover{
+    transform: translateY(0);
+    color: var(--color-base-primary-accent-1);
+
+    &::before {
+      transform-origin: right center;
+      transform: scale(0, 1);
+    }
+  }
+}
+
+/**
+* ------- btn--is-secondary --------
+*/
+.btn--is-secondary {
+  color: color(base-primary-accent-1);
+  background: color(base-secondary-accent-3);
+  border: 0.1rem solid color(base-secondary-accent-3);
+  &:hover {
+    box-shadow: 0px 10px 70px -10px rgba(112, 33, 0, 0.4);
+  }
+}
+
+/**
+* ------- btn--is-small --------
+*/
+.btn--is-small {
+  padding: 1.2rem 6rem;
+
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+}
+
+.btn--is-large {
+  padding: 2rem 6rem;
+
+  font-size: 1.5rem;
+  line-height: 132%;
+  letter-spacing: 0.1em;
+}
+
+/**
+* ------- btn--is-fullwidth --------
+*/
+.btn--is-fullwidth {
+  width: 100%;
+}
+
+/**
+* ------- btn--is-soldout --------
+*/
+.btn--is-soldout {
+  pointer-events: none !important;
+
+  border: 0.1rem solid #d1c5b7;
+  background-color: #d1c5b7;
+  position: relative;
+
+  &::before {
+    content: "sold out";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include box(100%, 100%);
+    background-color: inherit;
+
+    font-size: 1.3rem;
+    line-height: 146%;
+    letter-spacing: 0.08em;
+    color: color(base-secondary-accent-3);
+    font-weight: 800;
+  }
+}
+
+.btn--is-large {
+  &.btn--is-soldout:before {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+/**
+* ------- btn--is-loading --------
+*/
+.btn--is-loading {
+  position: relative;
+  pointer-events: none;
+
+  color: transparent !important;
+  background: #d64c11;
+
+  &::after {
+    content: '';
+
+    width: 1em;
+    height: 1em;
+
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 8px);
+
+    border-radius: 50%;
+    border: 0.2rem solid #ccc;
+    border-right-color: transparent;
+    border-top-color: transparent;
+
+    animation: rotateAround .5s infinite linear;
+  }
+
+  * {
+    opacity: 0;
+  }
+}
+
+/**-----------------------------
+* ------------ KEYFRAMES--------
+*-------------------------------
+*/
+@keyframes rotateAround {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(359deg);
+    opacity: .75;
+  }
+}
