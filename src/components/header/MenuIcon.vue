@@ -1,7 +1,7 @@
 <template>
   <div
     :class="[activeIcon ? 'active' : '', 'header__icon']"
-    @click="activeIcon = !activeIcon"
+    @click="handleClick"
   >
     <div class="hamburger">
       <div class="line"></div>
@@ -13,9 +13,17 @@
 
 <script>
 export default {
+  props: ['search', 'activeIcon'],
   data() {
     return {
-      activeIcon: false
+      
+    }
+  },
+  methods: {
+    handleClick() {
+      this.activeIcon = !this.activeIcon;
+      this.search = false;
+      this.$emit('toggleMenu');
     }
   }
 }
