@@ -1,16 +1,14 @@
 <template>
   <div id="app">
     <HeaderComp />
-    <div class="xo-container">
-      <MovieComp />
-    </div>
+    <Home />
     <FooterComp />
   </div>
 </template>
 
 <script>
 import HeaderComp from './components/header/HeaderComp.vue';
-import MovieComp from './components/content/MovieComp.vue'
+import Home from './views/Home.vue';
 import FooterComp from './components/footer/FooterComp.vue';
 
 export default {
@@ -21,7 +19,7 @@ export default {
   },
   components: {
     HeaderComp,
-    MovieComp,
+    Home,
     FooterComp
   }
 }

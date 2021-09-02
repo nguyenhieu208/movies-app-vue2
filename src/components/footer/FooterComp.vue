@@ -75,9 +75,7 @@ export default {
   .footer__logo {
     img {
       height: 30px;
-
     }
-    
   }
 
   .footer__text {
