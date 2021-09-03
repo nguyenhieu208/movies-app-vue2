@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="[activeIcon ? 'active' : '', 'header__icon']"
+    :class="[activeIcon ? 'active' : '', 'header-hamburger']"
     @click="handleClick"
   >
-    <div class="hamburger">
+    <div class="header-hamburger-lines">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -30,75 +30,78 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header__icon {
-  width: 32px;
-  height: 32px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-}
+@import '../../assets/styles/utils/mixins/size';
 
-/* // hamburger // */
-.hamburger {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
-  pointer-events: none;
-}
+  .header-hamburger {
+    @include box(3.2rem, 3.2rem);
 
-/* // line // */
-.line {
-  position: absolute;
-  width: 32px;
-  height: 6px;
-  background-color: #fff;
-  border-radius: 5px;
-  pointer-events: none;
+    border: none;
+    outline: none;
 
-  &:nth-child(1) { top: 0 }
-  &:nth-child(2) { top: 11px }
-  &:nth-child(3) { top: 22px }
-}
+    cursor: pointer;
 
-/* // ANIMATION BOUTTON B3 // */
-.header__icon .hamburger {
-  transition: transform 0.3s ease-in-out;
-}
+    position: relative;
+  }
 
-.header__icon.active .hamburger {
-  transition: transform 0.3s 0.3s ease-in-out;
-  transform: translate(-50%, -50%) rotate(360deg);
-}
+  /* // hamburger // */
+  .header-hamburger-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 
-.header__icon .line:nth-child(1),
-.header__icon .line:nth-child(3) {
-  transform: rotate(0deg);
-  transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
-}
+    @include box(3.2rem, 3.2rem);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 
-.header__icon .line:nth-child(2) {
-  transition: opacity 0.3s 0.3s ease-in-out;
-}
+    /* // line // */
+    .line {
+      position: absolute;
+      width: 32px;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 5px;
+      pointer-events: none;
 
-.header__icon.active .line:nth-child(1) {
-  top: 15px;
-  transform: rotate(45deg);
-  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
-}
+      &:nth-child(1) { top: 0 }
+      &:nth-child(2) { top: 11px }
+      &:nth-child(3) { top: 22px }
+    }
+  }
 
-.header__icon.active .line:nth-child(2) {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+  /* // ANIMATION BOUTTON B3 // */
+  .header-hamburger .header-hamburger-lines {
+    transition: transform 0.3s ease-in-out;
+  }
 
-.header__icon.active .line:nth-child(3) {
-  top: 15px;
-  transform: rotate(-45deg);
-  transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
-}
+  .header-hamburger.active .header-hamburger-lines {
+    transition: transform 0.3s 0.3s ease-in-out;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 
+  .header-hamburger .line:nth-child(1),
+  .header-hamburger .line:nth-child(3) {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out, top 0.3s 0.3s ease-in-out;
+  }
+
+  .header-hamburger .line:nth-child(2) {
+    transition: opacity 0.3s 0.3s ease-in-out;
+  }
+
+  .header-hamburger.active .line:nth-child(1) {
+    top: 15px;
+    transform: rotate(45deg);
+    transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+  }
+
+  .header-hamburger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .header-hamburger.active .line:nth-child(3) {
+    top: 15px;
+    transform: rotate(-45deg);
+    transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
+  }
 </style>

@@ -43,12 +43,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/styles/utils/mixins/responsive';
+@import '../../assets/styles/main.scss';
 
   .footer {
-    border-top: 1px solid #404040;
-    padding: 10px 0;
-    background: #0b0f16;
+    border-top: 1px solid $gray;
+
+    padding: 1rem 0;
+    background: $bg;
+
     .xo-row {
       flex-direction: column;
       justify-content: center;
@@ -63,7 +65,7 @@ export default {
       text-align: center;
       @include responsive(MD) {
         &:nth-child(1) {
-          text-align: left;
+          text-align: unset;
         }
         &:nth-child(3) {
           justify-content: flex-end;
@@ -80,20 +82,22 @@ export default {
 
   .footer__text {
     margin: 10px 0;
-    color: #fff;
+    color: $text;
   }
+
   .footer__list {
     display: flex;
     justify-content: center;
   }
+
   .footer__item {
-    width: 24px;
-    height: 24px;
+    @include box(2.4rem, 2.4rem);
+
     margin: 0 5px;
     cursor: pointer;
+
     svg {
-      width: 100%;
-      height: 100%;
+      @include box(100%, 100%);
       fill: #fff;
     }
   }

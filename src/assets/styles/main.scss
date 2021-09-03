@@ -7,32 +7,13 @@
 @import './vendors/variants'; // File chứa variable cho file grid bên dứoi
 @import './vendors/grid'; // Grid BS4
 @import './vendors/normalize'; // Reset CSS
+@import './vendors/variables';
 
 
 /*
  * Utils
  */
 @import './utils/utils-dir';
-
-/*
- * Pages
- */
-@import './pages/pages-dir';
-
-/*
- * Layout
- */
-@import './layout/layout-dir';
-
-/*
- * Components
- */
-@import './components/components-dir';
-
-/*
- * Sections
- */
- @import './sections/sections-dir';
 
 
 /* Auto @import all scss file from Theme folder  */

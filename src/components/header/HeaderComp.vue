@@ -31,7 +31,7 @@
         </div>
 
         <div 
-          :class="[search ? 'is-active' : '', 'header__overlay']" 
+          :class="[search ? 'is-active' : '', 'header-overlay']" 
           @click="search=false">
         </div>
         
@@ -77,26 +77,26 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '../../assets/styles/utils/mixins/responsive';
+<style lang="scss">
+@import '../../assets/styles/main';
 
   .header {
-    background: #0b0f16; 
+    background: $bg; 
     @include responsive(LG) {
       display: flex;
     }
   }
 
   .header-top {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   @include responsive(LG) {
-    .header__icon {
+    .header-hamburger {
       display: none;
     }
   }
@@ -107,33 +107,41 @@ export default {
   .header-nav{
     display: flex;
     justify-content: center;
+
     position: relative;
   }
 
   .header-nav__list{
     display: flex;
     flex-direction: column;
-    background: #0b0f16;
-    width: 100%;
-    height: calc(100vh - 72px);
+
+    background: $bg;
+    @include box(100%, calc(100% - 72px));
+
     position: fixed;
+
     transform: translateX(100%);
     transition: all .3s linear;
+
     opacity: 0;
+
     &.active {
       transform: translateX(0);
       opacity: 1;
-      transition: all .3s linear;
+      z-index: 1;
     }
 
     @include responsive(LG) {
       position: initial;
       top: unset;
       left: unset;
+
       height: unset;
       transform: unset;
       background: unset;
+
       opacity: 1;
+
       flex-direction: row;
       justify-content: space-between;
     }
@@ -143,26 +151,33 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     outline: none;
+
     @include responsive(LG) {
       flex-direction: row;
     }
   }
 
   .header-nav__link{
+    color: $text;
+
     padding: 1rem;
-    color: #fff;
-    font-size: 20px;
+
+    font-size: 2rem;
     font-weight: 600;
+
     position: relative;
 
     &::after {
       content: '';
       display: block;
+
+      background: $text;
+      @include box(0, 1px);
+
       position: absolute;
-      background: #fff;
-      width: 0;
-      height: 1px;
+
       transition: all .2s linear;
     }
 
@@ -175,16 +190,19 @@ export default {
   * Overlay
    */
 
-  .header__overlay {
+  .header-overlay {
     &.is-active {
       position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
       right: 0;
+
       cursor: pointer;
+
       background: rgba($color: #000000, $alpha: 0.2);
-      z-index: 100;
+
+      z-index: 10;
     }
   }
 </style>

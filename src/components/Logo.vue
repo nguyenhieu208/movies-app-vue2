@@ -1,5 +1,8 @@
 <template>
-  <a href="/">
+  <a 
+    href="/"
+    class="logo"
+  >
     <img 
       src="../assets/images/vmdb.svg" 
       alt="VMDb Logo"
@@ -15,14 +18,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .logo {
+    display: flex;
+    align-items: center;
 
-  &__img {
-    width: 88px;
-    height: 30px;
+    &__img {
+      width: 88px;
+      height: 30px;
+    }
   }
-}
 </style>

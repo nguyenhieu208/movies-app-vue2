@@ -1,8 +1,8 @@
 <template>
-  <div :class="[search ? 'is-active' : '' , 'header__search']">
+  <div :class="[search ? 'is-active' : '' , 'header-search']">
     <form action="#">
-      <input type="text" class="header__search-input" placeholder="Search...">
-      <span class="header__search-icon" @click="isExpand">
+      <input type="text" placeholder="Search...">
+      <span class="header-search__icon" @click="isExpand">
         <svg
           width="16"
           height="16"
@@ -26,31 +26,30 @@
 
 export default {
   props: ['search'],
-  data() {
-    return {
-
-    }
-  },
   methods: {
     isExpand() {
       this.search = false;
       this.$emit('closeSearch', this.search)
     }
-  },
-  component: {
   }
 }
 </script>
 
-<style lang="scss" scoped>
-  .header__search {
+<style lang="scss">
+@import '../../assets/styles/main';
+
+  .header-search {
     width: 100%;
     padding: 0;
+
     display: flex;
     align-items: center;
+
     z-index: 20;
+
     transform: translateY(-110%);
     transition: all .3s linear;
+
     position: fixed;
     top: 0;
     left: 0;
@@ -61,36 +60,32 @@ export default {
   }
   
   form {    
-    height: 74px;
-    width: 100%;
+    @include box(100%, 7.4rem);
 
     display: flex;
     justify-content: center;
 
     input {
-      background: #242424;
-      width: 100%;
-      height: 100%;
+      @include box(100%, 100%);
+
+      background: $gray;
+
+      color: $text;
+      font-size: 1.8rem;
+      
       padding-left: 20px;
-      font-size: 18px;
-      color: #fff;
+
       border: none;
     }
 
-    .header__search-icon {
-      // width: 100%;
-      height: 100%;
-      cursor: pointer;
-
+    .header-search__icon {
       display: flex;
       align-items: center;
-      background: #242424;
-      padding: 1rem 2rem;
-    }
 
-    svg {
-      // width: 100%;
-      // height: 100%;
+      background: $gray;
+      padding: 1rem 2rem;
+
+      cursor: pointer;
     }
   }
 </style>

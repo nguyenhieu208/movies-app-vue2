@@ -41,7 +41,6 @@ export default {
   methods: {
     results(results) {
       this.datas = results;
-      console.log(results);
     }
   }
 }
@@ -76,8 +75,9 @@ export default {
     }
   }
 
-  .popular-actors__item{
-    padding: 0;
+  .popular-actor__item {
+    padding-left: 0;
+    padding-right: 0;
   }
   .popular-actor__link{
     transition: all .2s linear;

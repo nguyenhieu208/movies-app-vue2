@@ -1,24 +1,23 @@
 <template>
-  <div class="movie-watch">
+  <div class="movie-watch upcoming-movie">
     <div class="xo-container">
       <h2>{{ title }}</h2>
       <div class="movie__list">
-        
         <router-link
+          to="#"
+          class="movie__item"
           v-for="(data, index) in datas.results"
           :key="index"
-          to="/"
-          class="movie__item"
         >
           <img
             :src="`https://image.tmdb.org/t/p/w200${data.poster_path}`"
             :alt="data.title"
             :title="data.title"
+            class="movie__poster"
           />
           <div class="movie__name">{{ index + 1 }}. {{ data.title }}</div>
-          <div class="movie__vote">{{ data.vote_average }}/10</div>
+          <div class="movie__date">{{ data.release_date }}</div>
         </router-link>
-
       </div>
     </div>
   </div>
@@ -26,14 +25,14 @@
 
 <script>
 export default {
-  props: ['title', 'apiQuery'],
+  props: ['title'],
   data() {
     return {
       datas: {}
     }
   },
   created() {
-    fetch(`https://api.themoviedb.org/3/${this.apiQuery}?api_key=3b7761605b6b24f4d58f1145729f81dc`)
+    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=3b7761605b6b24f4d58f1145729f81dc`)
       .then((res) => res.json())
       .then(this.results) 
       .catch((err) => {
@@ -43,13 +42,17 @@ export default {
   methods: {
     results(results) {
       this.datas = results;
+      console.log(results);
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-  .movie-watch {
-    margin-bottom: 60px;
+<style lang="scss">
+@import '../../assets/styles/main.scss';
+  .upcoming-movie {
+    background: $bg !important;
+
+    padding-bottom: 10px;
   }
 </style>

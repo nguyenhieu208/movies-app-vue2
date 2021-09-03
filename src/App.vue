@@ -12,11 +12,6 @@ import Home from './views/Home.vue';
 import FooterComp from './components/footer/FooterComp.vue';
 
 export default {
-  data() {
-    return {
-      name: 'HIei'
-    }
-  },
   components: {
     HeaderComp,
     Home,
@@ -26,5 +21,4 @@ export default {
 </script>
 
 <style lang="scss">
-
 </style>
