@@ -184,6 +184,7 @@ export default {
       right: 0;
       cursor: pointer;
       background: rgba($color: #000000, $alpha: 0.2);
+      z-index: 100;
     }
   }
 </style>

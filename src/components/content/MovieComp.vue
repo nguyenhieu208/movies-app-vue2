@@ -43,7 +43,6 @@ export default {
   methods: {
     results(results) {
       this.datas = results;
-      console.log(results);
     }
   }
 }
