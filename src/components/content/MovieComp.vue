@@ -7,7 +7,7 @@
         <router-link
           v-for="(data, index) in datas.results"
           :key="index"
-          to="/"
+          :to="{ name: 'detail', params: { id: data.id } }"
           class="movie__item"
         >
           <img
@@ -26,14 +26,14 @@
 
 <script>
 export default {
-  props: ['title', 'apiQuery'],
+  props: ['title', 'apiQuery', 'apiKey'],
   data() {
     return {
       datas: {}
     }
   },
   created() {
-    fetch(`https://api.themoviedb.org/3/${this.apiQuery}?api_key=3b7761605b6b24f4d58f1145729f81dc`)
+    fetch(`https://api.themoviedb.org/3/${this.apiQuery}?api_key=${this.apiKey}`)
       .then((res) => res.json())
       .then(this.results) 
       .catch((err) => {

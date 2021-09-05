@@ -3,24 +3,29 @@
     <MovieComp 
       title="This Week's Trending Movies"
       apiQuery="trending/movie/week"
+      :apiKey='apiKey'
     />
 
     <MovieComp 
       title="Today's Trending Movies"
       apiQuery="trending/movie/day"
+      :apiKey='apiKey'
     />
 
     <PopularActorsComp 
       title="Popular Actors"
+      :apiKey='apiKey'
     />
 
     <MovieComp 
       title="Top Rated Movies" 
       apiQuery="movie/top_rated" 
+      :apiKey='apiKey'
     />
 
     <ComingComp 
       title="Upcoming Movies"
+      :apiKey='apiKey'
     />
     
   </div>
@@ -30,8 +35,14 @@
 import MovieComp from '../components/content/MovieComp.vue';
 import PopularActorsComp from '../components/content/PopularActorsComp.vue';
 import ComingComp from '../components/content/ComingComp.vue';
+import {apiKey} from '../apiKey/index'
 
 export default {
+  data() {
+    return {
+      apiKey: apiKey
+    }
+  },
   components: {
     MovieComp,
     PopularActorsComp,
