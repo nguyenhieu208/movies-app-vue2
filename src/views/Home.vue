@@ -80,8 +80,8 @@ export default {
     gap: 2rem;
 
     padding: 4rem 0;
-    padding-left: 15px;
-    margin-left: -15px;
+    padding-left: 1.5rem;
+    margin-left: -1.5rem;
 
     overflow-x: auto;
     overflow-y: hidden;
@@ -92,7 +92,7 @@ export default {
   }
 
   ::-webkit-scrollbar {
-    height: 8px;
+    height: 0.8rem;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -102,12 +102,12 @@ export default {
   .movie__item {
     position: relative;
     transition: all .2s linear;
-    border: 3px solid transparent;
+    border: 0.3rem solid transparent;
 
 
     &:hover {
       transform: scale(1.08);
-      border: 3px solid $green;
+      border: 0.3rem solid $green;
     }
   }
 
@@ -119,7 +119,7 @@ export default {
   .movie__name {
     width: 100%;
 
-    padding: 5px;
+    padding: 0.5rem;
 
     text-align: center;
     text-shadow: 1px 1px 0 $gray;
@@ -138,8 +138,8 @@ export default {
     background-color: rgba(0, 0, 0, 0.2);
 
     position: absolute;
-    bottom: 8px;
-    right: 8px;
+    bottom: 0.8rem;
+    right: 0.8rem;
   }
 
   .movie__date {
@@ -147,7 +147,7 @@ export default {
     font-size: 1.6rem;
     text-align: center;
 
-    padding: 5px;
+    padding: 0.5rem;
     width: 100%;
 
     position: absolute;

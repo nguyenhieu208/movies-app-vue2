@@ -76,12 +76,12 @@ export default {
 
   .footer__logo {
     img {
-      height: 30px;
+      height: 3rem;
     }
   }
 
   .footer__text {
-    margin: 10px 0;
+    margin: 1rem 0;
     color: $text;
   }
 
@@ -93,7 +93,7 @@ export default {
   .footer__item {
     @include box(2.4rem, 2.4rem);
 
-    margin: 0 5px;
+    margin: 0 0.5rem;
     cursor: pointer;
 
     svg {

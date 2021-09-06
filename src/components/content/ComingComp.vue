@@ -52,6 +52,6 @@ export default {
   .upcoming-movie {
     background: $bg !important;
 
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
   }
 </style>

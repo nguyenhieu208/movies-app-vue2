@@ -50,6 +50,6 @@ export default {
 
 <style lang="scss" scoped>
   .movie-watch {
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
   }
 </style>

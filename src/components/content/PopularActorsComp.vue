@@ -5,7 +5,7 @@
       <ul class="xo-row popular-actors__list">
         <li 
           class="xo-col-6 xo-col-md-4 xo-col-lg-3 xo-col-xl-2 popular-actor__item"
-          v-for="(data, index) in datas.results"
+          v-for="(data, index) in datas.results.slice(0, 18)"
           :key="index"
         >
           <a
@@ -47,27 +47,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/styles/utils/mixins/responsive';
+@import '../../assets/styles/main.scss';
 
   .popular-actors {
     h2 {
-      color: #fff;
-      font-size: 28px;
+      color: $text;
+
+      font-size: 2.8rem;
       font-weight: 700;
+
       padding: 1.4rem 0;
 
       @include responsive(LG) {
-        font-size: 40px;
+        font-size: 4rem;
         padding: 1.8rem 0;
       }
     }
   }
   .popular-actors__list{
     display: flex;
-    padding-bottom: 50px;
+    padding-bottom: 5rem;
 
     @include responsive(MD) {
-      padding-bottom: 80px;
+      padding-bottom: 8rem;
     }
 
     &.xo-row {
@@ -78,15 +80,19 @@ export default {
   .popular-actor__item {
     padding-left: 0;
     padding-right: 0;
+
   }
   .popular-actor__link{
     transition: all .2s linear;
+
     display: flex;
     align-items: center;
+
     margin: 0.25rem;
     padding: 0.5rem;
-    background: #404040;
-    border-radius: 0.25rem;
+
+    background: $gray;
+    border-radius: 1rem;
 
     &:hover {
       background: #353535;
@@ -99,17 +105,20 @@ export default {
 
 
   .popular-actor__img {
-    width: 50px;
-    height: 50px;
+    @include box(5rem, 5rem);
+
     margin-right: 0.5rem;
     padding: 0.5rem;
-    background: green;
+
+    background: $green;
     background-position: center 20%;
     background-size: 100%;
+
     border-radius: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
+  
   .popular-actor__name{
-    font-size: 16px;
+    font-size: 1.6rem;
   }
 </style>

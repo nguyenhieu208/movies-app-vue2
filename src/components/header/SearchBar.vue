@@ -73,7 +73,7 @@ export default {
       color: $text;
       font-size: 1.8rem;
       
-      padding-left: 20px;
+      padding-left: 2rem;
 
       border: none;
     }

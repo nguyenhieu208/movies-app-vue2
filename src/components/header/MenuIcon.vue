@@ -56,15 +56,14 @@ export default {
     /* // line // */
     .line {
       position: absolute;
-      width: 32px;
-      height: 6px;
+      @include box(3.2rem, 0.6rem);
       background-color: #fff;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       pointer-events: none;
 
       &:nth-child(1) { top: 0 }
-      &:nth-child(2) { top: 11px }
-      &:nth-child(3) { top: 22px }
+      &:nth-child(2) { top: 1.1rem }
+      &:nth-child(3) { top: 2.2rem }
     }
   }
 
@@ -89,7 +88,7 @@ export default {
   }
 
   .header-hamburger.active .line:nth-child(1) {
-    top: 15px;
+    top: 1.5rem;
     transform: rotate(45deg);
     transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
   }
@@ -100,7 +99,7 @@ export default {
   }
 
   .header-hamburger.active .line:nth-child(3) {
-    top: 15px;
+    top: 1.5rem;
     transform: rotate(-45deg);
     transition: top 0.3s ease-in-out, transform 0.3s 0.3s ease-in-out;
   }
