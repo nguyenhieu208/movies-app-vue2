@@ -213,10 +213,6 @@ export default {
     }
   },
   created() {
-    // console.log(this.id);
-    // console.log(apiKey);
-    // fetch(`https://api.themoviedb.org/3/movie/436969?api_key=3b7761605b6b24f4d58f1145729f81dc&append_to_response=similar_movies,credits,external_ids`)
-
     fetch(`https://api.themoviedb.org/3/movie/${this.id}?api_key=${apiKey}&append_to_response=similar_movies,credits,external_ids`)
       .then((res) => res.json())
       .then(this.results) 
@@ -227,6 +223,18 @@ export default {
   methods: {
     results(results) {
       this.apiData = results;
+      console.log(this.apiData.external_ids);
+    }
+  },
+  watch: {
+    '$route'(to) {
+      this.id = to.params.id;
+      fetch(`https://api.themoviedb.org/3/movie/${this.id}?api_key=${apiKey}&append_to_response=similar_movies,credits,external_ids`)
+        .then((res) => res.json())
+        .then(this.results) 
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }
 }

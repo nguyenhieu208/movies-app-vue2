@@ -5,7 +5,7 @@
       <ul class="xo-row popular-actors__list">
         <li 
           class="xo-col-6 xo-col-md-4 xo-col-lg-3 xo-col-xl-2 popular-actor__item"
-          v-for="(data, index) in datas.results.slice(0, 18)"
+          v-for="(data, index) in datas"
           :key="index"
         >
           <a
@@ -39,8 +39,8 @@ export default {
       });
   },
   methods: {
-    results(results) {
-      this.datas = results;
+    results(apiData) {
+      this.datas = apiData.results.slice(0, 18);
     }
   }
 }

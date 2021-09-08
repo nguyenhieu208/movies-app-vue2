@@ -69,6 +69,13 @@ export default {
       this.search = search;
     }
   },
+  watch: {
+    search() {
+      if (this.search) {
+        document.body.classList.add("remove-scrolling");
+      } else document.body.classList.remove("remove-scrolling");
+    }
+  },
   components: {
     Logo,
     MenuIcon,
